@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=900, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.21.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.2"></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            font-size: 12px;
+        }
+        
+        .holder {
+            display: flex;
+        }
+        
+        .steps {
+            width: 50%;
+        }
+        
+        .step {
+            margin-top: 100px;
+            min-height: 600px;
+        }
+        
+        #chart {
+            width: 20%;
+            margin-bottom: 5px;
+            margin-left: 5px;
+            margin-top: 5px;
+            margin-right: 50px;
+            position: sticky;
+            top: 0px;
+            left: 0px;
+            width: 400px;
+            height: 400px;
+        }
+
+
+        #chart1 {
+            width: 30%;
+            margin-bottom: 5px;
+            margin-left: 5px;
+            margin-top: 5px;
+            margin-right: 50px;
+            position: sticky;
+            top: 0px;
+            left: 0px;
+            width: 400px;
+            height: 400px;
+        }
+
+        #chart2{
+            width: 30%;
+            margin-bottom: 5px;
+            margin-left: 5px;
+            margin-top: 5px;
+            margin-right: 50px;
+            position: sticky;
+            top: 0px;
+            left: 0px;
+            width: 400px;
+            height: 400px;
+        }
+        
+        #outro {
+            height: 500px;
+        }
+    </style>
+</head>
+
+<!-- <svg id="chart1 "></svg> -->
+
+
+<body>
+    <h1>Futbol (Soccer) World Cup     </h1>
+    <div>
+        <p>
+            FIFA is an international governing body of association football, beach football and futsal. It was founded in 1904. FIFA divides the 
+            countries in six regions (AFC, CAF, CONCACAF, CONMEBOL, OFC, UEFA). Each confederation implement an eliminatory process to define
+            the countries representing them in the Wold Cup.  Wold Cups are implemented every 4 year, and there have been 21 world cups 
+            within 1930 and 2018.  Economically, EUFA is the strongest confederation with the most money.  The following graphs explore
+            the performance of the confederations in the World Cups.  The FIFA confederations are the following:
+          </p>
+          <ol>
+            <li>AFC = Asian Football Confederation in Asia and Australia.</li>
+            <li>CAF = Confédération Africaine de Football in Africa.</li>
+            <li>CONCACAF = Confederation of North, Central American and Caribbean Association Football in North America and Central America.</li>
+            <li>CONMEBOL = Confederación Sudamericana de Fútbol</li>
+            <li>OFC = Oceania Football Confederation in Oceania</li>
+            <li>UEFA = Union of European Football Associations</li>
+          </ol>
+              </div>
+    <hr />
+    <section>
+        <div>
+            <h2>Scroll Down to explore the different world cups:</h2>
+        </div>
+        <div> 
+            <h3>Select Metric and Click on button:</h3>
+            <select id="select1"></select>
+            <button id="Buton1">Click Button</button>
+      </div>    
+        <div class="holder">
+         
+            <!-- <svg id="chart"></svg> -->
+            <div class="row"><div id="chart"></div></div>
+            <div class="row"><div id="chart1"></div></div>
+
+
+            <!-- <div></div>
+            <div><div id="chart1"></div></div> -->
+            <div class="steps">
+                <div class="step"><h3>A Brief History of Futbol World Cups:</h3>
+                    There have been 21 world cups between 1930 and 2018. Only eight countries
+                    have won the world cup. Brazil is the most successful country with 5 world cups.
+                </div>
+                <div class="step"><h3>World Cup: 1930</h3>
+                    <ol>
+                        <li>Host: Uruguay.</li>
+                        <li>Champion: Uruguay. (Score: 4:2)</li>
+                        <li>Runner-up: Argentina.</li>
+                        <li>Third Place: USA</li>
+                        <li>Fourth Place:  Yugoslavia</li>
+                        <li>Number of Teams: 13</li>
+                      </ol>
+                    
+                </div>
+                <div class="step"><h3>World Cup: 1934</h3>
+                    <ol>
+                        <li>Host: Italy</li>
+                        <li>Champion: Italy (Score: 2:1)</li>
+                        <li>Runner-up: Czechoslovakia</li>
+                        <li>Third Place: Germany</li>
+                        <li>Fourth Place: Austria</li>
+                        <li>Number of Teams: 16</li>
+                      </ol>
+
+                </div>
+                <div class="step"><h3>World Cup: 1938</h3>
+                    <ol>
+                        <li>Host: France</li>
+                        <li>Champion: Italy (Score: 4:2)</li>
+                        <li>Runner-up: Hungary</li>
+                        <li>Third Place: Brazil</li>
+                        <li>Fourth Place: Sweden</li>
+                        <li>Number of Teams: 15</li>
+                      </ol>
+                </div>
+                <div class="step"><h3>World Cup: 1950</h3>
+                    <ol>
+                        <li>Host: Brazil</li>
+                        <li>Champion: Uruguay (Score: 2-1)</li>
+                        <li>Runner-up: Brazil</li>
+                        <li>Third Place: Sweden</li>
+                        <li>Fourth Place: Spain</li>
+                        <li>Number of Teams: 13</li>
+                      </ol>
+                </div>
+                <div class="step"><h3>World Cup: 1954</h3>
+                    <ol>
+                        <li>Host: Switzerland</li>
+                        <li>Champion: Germany (Score: 3-2)</li>
+                        <li>Runner-up: Hungary</li>
+                        <li>Third Place: Austria</li>
+                        <li>Fourth Place: Uruguay</li>
+                        <li>Number of Teams: 16</li>
+                      </ol>
+                </div>
+                <div class="step"><h3>World Cup: 1958</h3>
+                    <ol>
+                        <li>Host: Sweden</li>
+                        <li>Champion: Brazil (Score: 5-2)</li>
+                        <li>Runner-up: Sweden</li>
+                        <li>Third Place: France</li>
+                        <li>Fourth Place: Germany</li>
+                        <li>Number of Teams: 16</li>
+                      </ol>
+                </div>
+                <div class="step"><h3>World Cup: 1962</h3>
+                    <ol>
+                        <li>Host: Chile</li>
+                        <li>Champion: Brazil (Score: 3-1)</li>
+                        <li>Runner-up: Czechoslovakia</li>
+                        <li>Third Place: Chile</li>
+                        <li>Fourth Place: Yugoslavia</li>
+                        <li>Number of Teams: 16</li>
+                      </ol>
+                </div>
+                <div class="step"><h3>World Cup: 1966</h3>
+                    <ol>
+                        <li>Host: England</li>
+                        <li>Champion: England (Score: 4-2)</li>
+                        <li>Runner-up: Germany</li>
+                        <li>Third Place: Portugal</li>
+                        <li>Fourth Place: Soviet Union</li>
+                        <li>Number of Teams: 16</li>
+                      </ol>
+                </div>
+                <div class="step"><h3>World Cup: 1970</h3>
+                    <ol>
+                        <li>Host: Mexico</li>
+                        <li>Champion: Brazil (Score: 4-1)</li>
+                        <li>Runner-up: Italy</li>
+                        <li>Third Place: Germany</li>
+                        <li>Fourth Place: Uruguay</li>
+                        <li>Number of Teams: 16</li>
+                      </ol>
+                </div>
+                <div class="step"><h3>World Cup: 1974</h3>
+                    <ol>
+                        <li>Host: Germany</li>
+                        <li>Champion: Germany (Score:2-1)</li>
+                        <li>Runner-up: Netherlands</li>
+                        <li>Third Place: Poland</li>
+                        <li>Fourth Place: Brazil</li>
+                        <li>Number of Teams: 16</li>
+                      </ol>
+                </div>
+                <div class="step"><h3>World Cup: 1978</h3>
+                    <ol>
+                        <li>Host: Argentina</li>
+                        <li>Champion: Argentina (Score: 3-1)</li>
+                        <li>Runner-up: Netherlands</li>
+                        <li>Third Place: Brazil</li>
+                        <li>Fourth Place: Italy</li>
+                        <li>Number of Teams: 16</li>
+                      </ol>
+                </div>
+                <div class="step"><h3>World Cup: 1982</h3>
+                    <ol>
+                        <li>Host: Spain</li>
+                        <li>Champion: Italy (Score: 3-1)</li>
+                        <li>Runner-up: Germany</li>
+                        <li>Third Place: Poland</li>
+                        <li>Fourth Place: France</li>
+                        <li>Number of Teams: 24</li>
+                      </ol>
+                </div>
+                <div class="step"><h3>World Cup: 1986</h3>
+                    <ol>
+                        <li>Host: Mexico</li>
+                        <li>Champion: Argentina (Score: 3-2)</li>
+                        <li>Runner-up: Germany</li>
+                        <li>Third Place: France</li>
+                        <li>Fourth Place: Belgium</li>
+                        <li>Number of Teams: 24</li>
+                      </ol>
+                </div>
+                <div class="step"><h3>World Cup: 1990</h3>
+                    <ol>
+                        <li>Host: Italy</li>
+                        <li>Champion: Germany (Score: 1-0)</li>
+                        <li>Runner-up: Argentina</li>
+                        <li>Third Place: Italy</li>
+                        <li>Fourth Place: England</li>
+                        <li>Number of Teams: 24</li>
+                      </ol>
+                </div>
+                <div class="step"><h3>World Cup: 1994</h3>
+                    <ol>
+                        <li>Host: USA</li>
+                        <li>Champion: Brazil (Score: 0-0, 3-2)</li>
+                        <li>Runner-up: Italy</li>
+                        <li>Third Place: Sweden</li>
+                        <li>Fourth Place: Bulgary</li>
+                        <li>Number of Teams: 24</li>
+                      </ol>
+                </div>
+                <div class="step"><h3>World Cup: 1998</h3>
+                    <ol>
+                        <li>Host: France</li>
+                        <li>Champion: France (Score: 3-0)</li>
+                        <li>Runner-up: Brazil</li>
+                        <li>Third Place: Croatia</li>
+                        <li>Fourth Place: Neatherlands</li>
+                        <li>Number of Teams: 32</li>
+                      </ol>
+                </div>
+                <div class="step"><h3>World Cup: 2002</h3>
+                    <ol>
+                        <li>Host: South Korea, Japan</li>
+                        <li>Champion: Brazil (Score: 2-0)</li>
+                        <li>Runner-up: Germany</li>
+                        <li>Third Place: Turkey</li>
+                        <li>Fourth Place: South Korea</li>
+                        <li>Number of Teams: 32</li>
+                      </ol>
+                </div>
+                <div class="step"><h3>World Cup: 2006</h3>
+                    <ol>
+                        <li>Host: Germany</li>
+                        <li>Champion: Italy (Score: 1-1; 5-3p)</li>
+                        <li>Runner-up: France</li>
+                        <li>Third Place: Germany</li>
+                        <li>Fourth Place: Portugal</li>
+                        <li>Number of Teams: 32</li>
+                      </ol>
+                </div>
+                <div class="step"><h3>World Cup: 2010</h3>
+                    <ol>
+                        <li>Host: South Africa</li>
+                        <li>Champion: Spain (Score: 1-0)</li>
+                        <li>Runner-up: Netherlands</li>
+                        <li>Third Place: Germany</li>
+                        <li>Fourth Place: Uruguay</li>
+                        <li>Number of Teams: 32</li>
+                      </ol>
+                </div>
+                <div class="step"><h3>World Cup: 2014</h3>
+                    <ol>
+                        <li>Host: Brazil</li>
+                        <li>Champion: Germany (Score: 1-0)</li>
+                        <li>Runner-up: Argentina</li>
+                        <li>Third Place: Netherlands</li>
+                        <li>Fourth Place: Brazil</li>
+                        <li>Number of Teams: 32</li>
+                      </ol>
+                </div>
+                <div class="step"><h3>World Cup: 2018</h3>
+                    <ol>
+                        <li>Host: Russia</li>
+                        <li>Champion: France (Score: 4-2)</li>
+                        <li>Runner-up: Croatia</li>
+                        <li>Third Place: Belgium</li>
+                        <li>Fourth Place: England</li>
+                        <li>Number of Teams: 32</li>
+                      </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h2>Though UEFA and CONMEBOL countries have won all the worldcups, Asian and African countries have improved significantly </h2>
+        <p>
+            Many players from Africa are now stars in European countries, and this has helped improve African
+            countries performance in the world cup.  In the graph, it can be seen how countries belonging
+            to CAF (Confédération Africaine de Football in Africa) have an improved performance since 1978.  
+            However, this performance has been constant, and it has not increased in the last years.
+            </p>
+        
+            <p>
+              Many players from Asia are also playing in European countries, and this has helped improve Asican
+              countries performance in the world cup.  In the graph, it can be seen how countries belonging
+              to AFC (Asian Football Confederation in Asia and Australia) have an improved performance in 1994, 2002, 
+              and 2010. The 2002 worl cup was held in South Korea and Japan, and this also helped in further
+              developing futbol in this Asian region. However, their performance has decreased in the last two world cups.
+            </p>
+            <div><div id="chart2"></div></div>  
+    </section>
+
+    <section id="outro"></section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+
+            <!-- <script src="https://d3js.org/d3.v6.js"></script> -->
+    <script src="https://unpkg.com/intersection-observer"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <script src="../static/js/wc.js"></script>
+    <script src="../static/js/main.js"></script>
+</body>
+
+</html>

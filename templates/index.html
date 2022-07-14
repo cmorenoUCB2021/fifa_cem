@@ -1,0 +1,203 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.21.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.2"></script>
+
+  <link rel="stylesheet" href="../static/css/style1.css" />
+
+</head>
+
+<body>
+  
+  <!-- to create columns-- https://www.w3schools.com/howto/howto_css_three_columns.asp -->
+
+  <div class="row">
+    <div class="columnt"><h1>Futbol (Soccer) World Cup     </h1></div>
+    <div class="columnt"><h1></h1></div>
+    <div class="columnt"><img src="../static/pic/fifa-logo.png" alt="FIFA LOGO" style="width:100px;height:100px;"></div>
+  </div>
+
+<h2> Which FIFA Confederation has the strongest average performance?</h2>
+
+<p>
+  FIFA is an international governing body of association football, beach football and futsal. It was founded in 1904. FIFA divides the 
+  countries in six regions (AFC, CAF, CONCACAF, CONMEBOL, OFC, UEFA). Each confederation implement an eliminatory process to define
+  the countries representing them in the Wold Cup.  Wold Cups are implemented every 4 year, and there have been 21 world cups 
+  within 1930 and 2018.  Economically, EUFA is the strongest confederation with the most money.  The following graphs explore
+  the performance of the confederations in the World Cups.  The FIFA confederations are the following:
+</p>
+<ol>
+  <li>AFC = Asian Football Confederation in Asia and Australia.</li>
+  <li>CAF = Confédération Africaine de Football in Africa.</li>
+  <li>CONCACAF = Confederation of North, Central American and Caribbean Association Football in North America and Central America.</li>
+  <li>CONMEBOL = Confederación Sudamericana de Fútbol</li>
+  <li>OFC = Oceania Football Confederation in Oceania</li>
+  <li>UEFA = Union of European Football Associations</li>
+</ol>
+
+
+<div> 
+      <h3>Select Metric and Click on button:</h3>
+      <select id="select3"></select>
+      <button id="Buton2">Click Button</button>
+</div>
+
+
+<div>
+<div class="row">
+  <div class="columnt1">
+    <h4>On average, CONMEBOL has slightly better performance vs. other confederations.</h4>
+    <div id="chart0"></div>
+  <p>
+    <p>
+        When selecting any of the metrics available, CONMEBOL (South American Confederation) has a better performance 
+      when compared with other FIFA confederations.  Please take into account that when looking at "Position", 
+      the lower the position, the better.
+    </p>
+    <p>The graph presents average performance between 1930 and 2018 world cups.</p>    
+  </p>
+
+</div>
+  <div class="columnt1">
+    <h4> Brazil has won the most world cups. However, UEFA has the most world cup wins overall.</h4>
+    <div id="chart01"></div></div>
+</div>
+
+
+<hr size="2" noshade>
+
+<h2> Which confederation and country perform the best?</h2>
+
+<p>
+  In the following graphs, you would be able to explore the performance of the FIFA confederations in 
+  a selected World Cup (select year) for a selected metric (select metric).  
+  In addition, you can explore the performance of the top countries within a selected world cup and metric.  
+  There have been 21 world cups implemented within 1930 and 2018,
+  and only eight countries have won it.  UEFA and CONMEBOL have dominated this competition.  However, 
+  African and Asian countries have continue to improve.
+</p>
+<p>
+
+</p>
+
+  <div> 
+    <h4>Select Year and click button:</h4><select id="select1"></select>
+    <h4>Select Metric and click button:</h4><select id="select2"></select>
+    <button id="Buton1">Click Button</button>
+  </div>
+</div>
+
+
+<div>
+  <h3 id="id01">World Cup</h3>
+</div>
+
+
+<div class="row">
+  <div class="columng"><div id="chart1"></div></div>
+  <div class="columng"><div id="chart2"></div></div>
+</div>
+
+<hr size="2" noshade>
+
+<!-- TO PRESENT HCONCAT GRAPHS -->
+
+<div> 
+  <h4>Select Year and click button:</h4><select id="selectY1"></select>
+  <button id="ButonY1">Click Button</button>
+</div>
+</div>
+
+<div>
+  <h3>On average, the confederation with the highest points performs best in other key metrics.</h3>
+  <h4 id="id02">World Cup</h4>
+  <div id="chart1f"></div>
+</div>
+
+<hr size="2" noshade>
+
+<div>
+    <h2> How is the performance of the FIFA confederations across the years?</h2>
+    <h3>Asian Countries Improved since 1994, and African Countries have a steady performance since 1978.</h3>
+    <h3>Select Metric and click button:</h3>
+    <select id="select5"></select>
+    <button id="Buton5">Click Button</button>
+</div>
+
+<div id="chart3"></div></div>
+    <p>
+    Many players from Africa are now stars in European countries, and this has helped improve African
+    countries performance in the world cup.  In the graph, it can be seen how countries belonging
+    to CAF (Confédération Africaine de Football in Africa) have an improved performance since 1978.  
+    However, this performance has been constant, and it has not increased in the last years.
+    </p>
+
+    <p>
+      Many players from Asia are also playing in European countries, and this has helped improve Asican
+      countries performance in the world cup.  In the graph, it can be seen how countries belonging
+      to AFC (sian Football Confederation in Asia and Australia) have an improved performance in 1994, 2002, 
+      and 2010. The 2002 worl cup was held in South Korea and Japan, and this also helped in further
+      developing futbol in this Asian region. However, their performance has decreased in the last two world cups.
+    </p>
+
+    <p>For your reference, the list of confederations is included below:</p>
+
+      <ol>
+        <li>AFC = Asian Football Confederation in Asia and Australia.</li>
+        <li>CAF = Confédération Africaine de Football in Africa.</li>
+        <li>CONCACAF = Confederation of North, Central American and Caribbean Association Football in North America and Central America.</li>
+        <li>CONMEBOL = Confederación Sudamericana de Fútbol</li>
+        <li>OFC = Oceania Football Confederation in Oceania</li>
+        <li>UEFA = Union of European Football Associations</li>
+      </ol>
+
+<hr size="2" noshade>
+  
+<h1>Is there a link between FIFA Ranking and World Cup Performance?</h1>
+<p>
+  FIFA releases a weekly/monthly ranking for all teams. The graph below explores how the FIFA ranking relates to World Cup performance.
+  The blue line presents FIFA ranking since 1993, and the red dots indicate the position of the country in the wold cup (the lower the better).
+</p>
+
+<div> 
+
+  <h3>Select Metric and click button:</h3>
+  <select id="select4"></select>
+  <button id="Buton4">Click Button</button>
+
+</div>
+   <h4>For the eight countries that have won the world cup, the FIFA ranking tend to align to world cup performance</h4>
+   <div id="chart4" class="center"></div>
+   <div>
+    
+    <p> Please select a country you would like to explore.  In general the countries who have won the wold cup 
+        have a relatively high FIFA ranking.  </p>
+
+    <p>The countries tha have won a world cup are: Brazil, Germany, Italy, Argentina, Uruguay, France, Spain and England.
+       Please note that the lower the rank (or world cup position), the better.
+    </p>
+
+   </div>
+<div>
+
+  
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+
+      <!-- <script type="text/javascript" src="../static/js/script.js"></script> -->
+      <script src="https://d3js.org/d3.v7.min.js"></script>
+      <script src="../static/js/wc.js"></script>
+      <script src="../static/js/fifa.js"></script>
+      <!-- <script src="../static/js/script.js"></script> -->
+      <script src="../static/js/scriptwc.js"></script>
+
+
+</body>
+
+</html>
