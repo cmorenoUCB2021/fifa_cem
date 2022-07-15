@@ -15,8 +15,24 @@
         body {
             font-family: sans-serif;
             margin: 20px;
-            font-size: 12px;
+            font-size: 15px;
         }
+
+        /* .sticky-div {
+            background-color: white;
+            position: sticky;
+            top: 0px;
+            padding: 10px 0px;
+        }
+         
+        .start {
+            height: 50px;
+        }
+         
+        .end {
+            height: 50px;
+        } */
+
         
         .holder {
             display: flex;
@@ -28,6 +44,8 @@
         
         .step {
             margin-top: 100px;
+            width: 200px;
+            left: 700px;
             min-height: 600px;
         }
         
@@ -38,25 +56,25 @@
             margin-top: 5px;
             margin-right: 50px;
             position: sticky;
-            top: 0px;
+            top: 100px;
             left: 0px;
-            width: 400px;
-            height: 400px;
+            width: 200px;
+            height: 200px;
         }
 
 
-        #chart1 {
+        /* #chart1 {
             width: 30%;
             margin-bottom: 5px;
             margin-left: 5px;
             margin-top: 5px;
             margin-right: 50px;
             position: sticky;
-            top: 0px;
+            top: 100px;
             left: 0px;
             width: 400px;
             height: 400px;
-        }
+        } */
 
         #chart2{
             width: 30%;
@@ -72,29 +90,38 @@
         }
         
         #outro {
-            height: 500px;
+            height: 700px;
         }
     </style>
+
+
 </head>
 
 <!-- <svg id="chart1 "></svg> -->
 
 
-<body>
-    <h1>A Brief History of Futbol (Soccer) World Cups</h1>
+<body style="margin:50px 200px 50px 100px;">
+
+    <div class="sticky-div">
+          <h1>A Brief History of Futbol (Soccer) World Cups</h1>
+    </div>
+
     <nav>
         <h4> When finish, use this link to go back to home page.</h4>
         <ul>
           <a href="../index.html">Go back to Home Page</a>
         </ul>
       </nav>
-    <div>
+    
+      <div>
         <p>
-            FIFA is an international governing body for football, beach football and futsal. FIFA divides the 
-            countries in six regions (AFC, CAF, CONCACAF, CONMEBOL, OFC, UEFA). Wold Cups are implemented every 4 year, and there have been 21 world cups 
-            within 1930 and 2018. The following graphs provide a brief history of the world cups from 1930 to 2018.
-            The FIFA confederations are the following:
-          </p>
+            FIFA is the international governing body for football, beach football and futsal. It was founded in 1904. FIFA divides the 
+            countries in six regions (AFC, CAF, CONCACAF, CONMEBOL, OFC, UEFA). 
+        </p>
+        <p>
+            Wold Cups are implemented every 4 year, and there have been 21 world cups 
+            within 1930 and 2018.  The FIFA confederations are the following:
+        </p> 
           <ol>
             <li>AFC = Asian Football Confederation in Asia and Australia.</li>
             <li>CAF = Confédération Africaine de Football in Africa.</li>
@@ -114,15 +141,13 @@
             <select id="select1"></select>
             <button id="Buton1">Click Button</button>
       </div>    
-        <div class="holder">
+
+      <div class="holder">
          
             <!-- <svg id="chart"></svg> -->
-            <div class="row"><div id="chart"></div></div>
-            <div class="row"><div id="chart1"></div></div>
-
-
-            <!-- <div></div>
-            <div><div id="chart1"></div></div> -->
+            <div id="chart"></div>
+            <!-- <div id="chart1"></div> -->
+  
             <div class="steps">
                 <div class="step"><h3>A Brief History of Futbol World Cups:</h3>
                     There have been 21 world cups between 1930 and 2018. Only eight countries
@@ -138,6 +163,7 @@
                         <li>Number of Teams: 13</li>
                       </ol>
                     
+              
                 </div>
                 <div class="step"><h3>World Cup: 1934</h3>
                     <ol>
@@ -346,13 +372,18 @@
     <section>
         <h2>Though UEFA and CONMEBOL countries have won all the worldcups, Asian and African countries have improved significantly </h2>
         <p>
-            In the graph, it can be seen how countries belonging to CAF (Confédération Africaine de Football in Africa) have an 
-            improved performance since 1978. However, this performance has been constant, and it has not increased in the last years.
+            Many players from Africa are now stars in European countries, and this has helped improve African
+            countries performance in the world cup.  In the graph, it can be seen how countries belonging
+            to CAF (Confédération Africaine de Football in Africa) have an improved performance since 1978.  
+            However, this performance has been constant, and it has not increased in the last years.
             </p>
         
             <p>
-              In addition, countries belonging to AFC (Asian Football Confederation in Asia and Australia) have an improved performance 
-              in 1994, 2002, and 2010. However, their performance has decreased in the last two world cups.
+              Many players from Asia are also playing in European countries, and this has helped improve Asican
+              countries performance in the world cup.  In the graph, it can be seen how countries belonging
+              to AFC (Asian Football Confederation in Asia and Australia) have an improved performance in 1994, 2002, 
+              and 2010. The 2002 worl cup was held in South Korea and Japan, and this also helped in further
+              developing futbol in this Asian region. However, their performance has decreased in the last two world cups.
             </p>
             <div><div id="chart2"></div></div>  
     </section>

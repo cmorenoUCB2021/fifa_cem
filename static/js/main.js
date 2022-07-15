@@ -30,6 +30,9 @@ function initdropmenu(){
 
   };
 
+
+
+
 // GRAPH FOR PROGRESSION PERFORMANCE OF CONFEDERATIONS
 function wcconfgraph(chartid, metric, datawc){
 
@@ -56,6 +59,46 @@ function wcconfgraph(chartid, metric, datawc){
     
   };
 
+// Graph using HCAT
+function conf_country_concat(chartid, year, metric, datawc){
+
+  var widthg = 150
+  // chartid = '#chart'; datawc= wcdata
+
+  console.log("IN NEW GRAPH ************")
+  var spec = {
+      $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+      
+      data: {values: datawc},
+      transform: [{filter: "datum.Year == "+year}],
+     
+      hconcat: [{
+                title: "Average "+metric+" per Confederation - "+year,
+                mark: 'bar',
+                width: widthg,
+                encoding: {
+                  x: {field: 'confederation',  type: 'ordinal',sort: "-y" },
+                  y: {field: metric, aggregate: 'mean', type: 'quantitative', sort: "ascending"},
+                  tooltip: [{field: metric, aggregate: 'mean', type: 'quantitative'},
+                            {field: 'confederation', type: 'ordinal'}],
+                  color:  {field: 'confederation', type: 'nominal'}
+                }},
+              {title: metric+" per Country - "+year,
+              mark: 'bar',
+              width: 400,
+              encoding: {
+                x: {field: 'Team',  type: 'ordinal',sort: "-y" },
+                y: {field: "Points", aggregate: 'mean', type: 'quantitative', sort: "ascending"},
+                tooltip: [{field: "Points", aggregate: 'mean', type: 'quantitative'},
+                          {field: 'Team', type: 'ordinal'}],
+                color:  {field: 'confederation', type: 'nominal'}
+              }
+            }
+      ]};
+      vegaEmbed(chartid, spec)
+    }
+
+
 
 // PRESENT CONFEDERATION PERFORMANCE FOR A GIVEN YEAR AND METRIC
 function confgraph(chartid, year, metric, datawc){
@@ -66,7 +109,7 @@ function confgraph(chartid, year, metric, datawc){
         title: "Average "+metric+" per Confederation - "+year,
         data: {values: datawc},
         transform: [{filter: "datum.Year == "+year}],
-        width: 100,
+        // width: 100,
         mark: 'bar',
         encoding: {
           x: {field: 'confederation',  type: 'ordinal',sort: "-y" },
@@ -90,7 +133,7 @@ function countrygraph(chartid, year, metric, datawc){
         title: metric+" per Country - "+year,
         data: {values: datawc},
         transform: [{filter: "datum.Year == "+year}],
-        width: 200,
+        width: 300,
         mark: 'bar',
         encoding: {
           x: {field: 'Team',  type: 'ordinal',sort: "-y" },
@@ -128,19 +171,23 @@ scroller
         // callbacks[response.index]()
 
         if (response.index == 1){
-            confgraph('#chart', 1930, metric, wcdata)
-            countrygraph('#chart1', 1930, metric, wcdata)
+            // confgraph('#chart', 1930, metric, wcdata)
+            // countrygraph('#chart1', 1930, metric, wcdata)
+            conf_country_concat('#chart', 1930, metric, wcdata)
         } else if  (response.index == 2) {
-            confgraph('#chart', 1934, metric, wcdata)
-            countrygraph('#chart1', 1934, metric, wcdata)
+            // confgraph('#chart', 1934, metric, wcdata)
+            // countrygraph('#chart1', 1934, metric, wcdata)
+            conf_country_concat('#chart', 1934, metric, wcdata)
         } else if  (response.index == 3) {
-            confgraph('#chart', 1938, metric, wcdata)
-            countrygraph('#chart1', 1938, metric, wcdata)
+            // confgraph('#chart', 1938, metric, wcdata)
+            // countrygraph('#chart1', 1938, metric, wcdata)
+            conf_country_concat('#chart', 1938, metric, wcdata)
         } else {
             var dif1 = response.index - 4
             var year = 1950 + (dif1*4)
-            confgraph('#chart', year, metric, wcdata)
-            countrygraph('#chart1', year, metric, wcdata)
+            // confgraph('#chart', year, metric, wcdata)
+            // countrygraph('#chart1', year, metric, wcdata)
+            conf_country_concat('#chart', year, metric, wcdata)
         } 
 
         steps.style("opacity", 0.1)
@@ -158,8 +205,9 @@ scroller
 
 // setup resize event
 initdropmenu()
-confgraph('#chart', 1930, metric, wcdata)
-countrygraph('#chart1', 1930, metric, wcdata)
+// confgraph('#chart', 1930, metric, wcdata)
+// countrygraph('#chart1', 1930, metric, wcdata)
+conf_country_concat('#chart', 1930, metric, wcdata)
 wcconfgraph('#chart2', metric, wcdata)
 
 // Select the button for DATA3
@@ -187,8 +235,9 @@ button1.on("click", function() {
     metric = selectElement1.options[selectElement1.selectedIndex].value;
     console.log(metric);
 
-    confgraph('#chart', 1930, metric, wcdata)
-    countrygraph('#chart1', 1930, metric, wcdata)
+    // confgraph('#chart', 1930, metric, wcdata)
+    // countrygraph('#chart1', 1930, metric, wcdata)
+    conf_country_concat('#chart', 1930, metric, wcdata)
     wcconfgraph('#chart2', metric, wcdata)
 
 });
