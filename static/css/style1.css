@@ -1,6 +1,11 @@
 /* Reference for creating columngs: https://www.w3schools.com/howto/howto_css_three_columns.asp */
 
-.body {margin:50;padding:10}
+.navbar-fixed-top {
+  position: fixed;
+  right: 0;
+  left: 0;
+  }
+
 
 .columnt {
     float: left;
