@@ -14,15 +14,20 @@
 
 </head>
 
-<body>
+<body style="margin:50px 200px 50px 100px;">
   
   <!-- to create columns-- https://www.w3schools.com/howto/howto_css_three_columns.asp -->
 
+
   <div class="row">
-    <div class="columnt"><h1>Futbol (Soccer) World Cup     </h1></div>
-    <div class="columnt"><h1></h1></div>
+    <div class="columnt"><h1>Futbol (Soccer) World Cup Exploration</h1></div>
     <div class="columnt"><img src="./static/pic/fifa-logo.png" alt="FIFA LOGO" style="width:100px;height:100px;"></div>
   </div>
+
+  <nav>
+    <h4>For additional information on World Cups, use this <link rel="alternate" href="atom.xml" type="application/atom+xml" title="Atom"></h4>
+      <a href="templates/indexscroll.html">Go to World Cup History Page</a>
+  </nav>
 
 <h2> Which FIFA Confederation has the strongest average performance?</h2>
 
@@ -49,25 +54,27 @@
       <button id="Buton2">Click Button</button>
 </div>
 
+<div>
+  <h3>On average, CONMEBOL has slightly better performance vs. other confederations.</h3>
+  <h4> Brazil has won the most world cups. Though, UEFA (with 12) has the most world cup wins overall.</h4>
+</div>
+
 
 <div>
 <div class="row">
-  <div class="columnt1">
-    <h4>On average, CONMEBOL has slightly better performance vs. other confederations.</h4>
-    <div id="chart0"></div>
-  <p>
-    <p>
-        When selecting any of the metrics available, CONMEBOL (South American Confederation) has a better performance 
-      when compared with other FIFA confederations.  Please take into account that when looking at "Position", 
-      the lower the position, the better.
-    </p>
-    <p>The graph presents average performance between 1930 and 2018 world cups.</p>    
-  </p>
-
+  <div id="chart0"></div>
+  <div id="chart01"></div>
 </div>
-  <div class="columnt1">
-    <h4> Brazil has won the most world cups. However, UEFA has the most world cup wins overall.</h4>
-    <div id="chart01"></div></div>
+</div>
+
+
+<div>
+      <p>
+          When selecting any of the metrics available, CONMEBOL (South American Confederation) has a better performance 
+        when compared with other FIFA confederations.  Please take into account that when looking at "Position", 
+        the lower the position, the better.
+      </p>
+      <p>The graph presents average performance between 1930 and 2018 world cups.</p>    
 </div>
 
 
@@ -88,12 +95,11 @@
 </p>
 
   <div> 
-    <h4>Select Year and click button:</h4><select id="select1"></select>
-    <h4>Select Metric and click button:</h4><select id="select2"></select>
+    <h4>Select Year Metric and click button:</h4>
+    <select id="select1"></select>
+    <select id="select2"></select>
     <button id="Buton1">Click Button</button>
   </div>
-</div>
-
 
 <div>
   <h3 id="id01">World Cup</h3>
@@ -101,14 +107,15 @@
 
 
 <div class="row">
-  <div class="columng"><div id="chart1"></div></div>
-  <div class="columng"><div id="chart2"></div></div>
+  <div id="chart1"></div>
+  <div id="chart2"></div>
 </div>
 
 <hr size="2" noshade>
 
 <!-- TO PRESENT HCONCAT GRAPHS -->
 
+<h2>Comparing FIFA Confederation across four key metrics:</h2>
 <div> 
   <h4>Select Year and click button:</h4><select id="selectY1"></select>
   <button id="ButonY1">Click Button</button>
@@ -173,7 +180,8 @@
   <button id="Buton4">Click Button</button>
 
 </div>
-   <h4>For the eight countries that have won the world cup, the FIFA ranking tend to align to world cup performance</h4>
+   <h3>For the eight countries that have won the world cup, the FIFA ranking tend to align to world cup performance</h3>
+   <h4>Note: only Brazil, Germany, Italy, France, Argentina, Uruguay, Spain, England have won the world cup.</h4>
    <div id="chart4" class="center"></div>
    <div>
     

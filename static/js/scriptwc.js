@@ -114,7 +114,7 @@ function initdropmenu(){
         title: "Average "+metric+" per Confederation - "+year,
         data: {values: datawc},
         transform: [{filter: "datum.Year == "+year}],
-        width: 400,
+        // width: 400,
         mark: 'bar',
         encoding: {
           x: {field: 'confederation',  type: 'ordinal',sort: "-y" },
@@ -130,9 +130,10 @@ function initdropmenu(){
   };
 
 
-// PRESENT CONFEDERATION PERFORMANCE ON TWO METRICS FOR A GIVEN YEAR
+// PRESENT CONFEDERATION PERFORMANCE ON FOUR METRICS FOR A GIVEN YEAR
   function confgraph_concat(chartid, year, datawc){
 
+    var widthg = 150
     // chartid = '#chart'; datawc= wcdata
     var spec = {
         $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
@@ -141,7 +142,7 @@ function initdropmenu(){
         transform: [{filter: "datum.Year == "+year}],
         hconcat: [{
                         title: "Average Points - "+year,
-                        width: 200,
+                        width: widthg,
                         mark: 'bar',
                         encoding: {
                         x: {field: 'confederation',  type: 'ordinal',sort: "-y" },
@@ -152,7 +153,7 @@ function initdropmenu(){
                         }},
                    {                    
                         title: "Average GOALS FOR - "+year,
-                        width: 200,
+                        width: widthg,
                         mark: 'bar',
                         encoding: {
                         x: {field: 'confederation',  type: 'ordinal',sort: "-y" },
@@ -164,7 +165,7 @@ function initdropmenu(){
 
                     {
                         title: "Average GOALS AGAINST - "+year,
-                        width: 200,
+                        width: widthg,
                         mark: 'bar',
                         encoding: {
                         x: {field: 'confederation',  type: 'ordinal',sort: "-y" },
@@ -175,7 +176,7 @@ function initdropmenu(){
                         }},
                     {
                         title: "Average WINS - "+year,
-                        width: 200,
+                        width: widthg,
                         mark: 'bar',
                         encoding: {
                         x: {field: 'confederation',  type: 'ordinal',sort: "-y" },
@@ -208,7 +209,7 @@ function initdropmenu(){
                         {country: 'Spain', won: 1, confederation: "UEFA"},
                         {country: 'England', won: 2, confederation: "UEFA"}
                         ]},
-        width: 400,
+        // width: 400,
         mark: 'bar',
         encoding: {
           x: {field: 'country',  type: 'ordinal',sort: "-y" },
@@ -231,7 +232,7 @@ function initdropmenu(){
         $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
         title: "Average "+metric+" per Confederation from 1930 to 2018",
         data: {values: datawc},
-        width: 400,
+        // width: 400,
         mark: 'bar',
         encoding: {
           x: {field: 'confederation',  type: 'ordinal',sort: "-y" },
